@@ -55,6 +55,10 @@
    
   1. Authentication 
      * [Work with different credentials](credential-helper.md)
+     
+  1. Shells 
+     * [color for zsh-shell under osx](https://gist.github.com/chrisnolet/d3582cd63eb3d7b4fcb4d5975fd91d04)
+     * [branch mit anzeigen in zsh-shell und osx](https://github.com/romkatv/powerlevel10k)
    
   1. Documentation 
      * [GIT Pdf](http://schulung.t3isp.de/documents/pdfs/git/git-training.pdf) 
