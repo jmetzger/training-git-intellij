@@ -18,7 +18,7 @@
      * [git tag](tag.md)
    
   1. Branches / Branching 
-     [Branch Overview with origin image](branches/overview.md)
+     * [Branch Overview with origin image](branches/overview.md)
    
   1. Advanced Commands 
      * [git reflog](reflog.md) 
