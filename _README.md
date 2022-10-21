@@ -17,6 +17,9 @@
      * [git merge](#git-merge)
      * [git tag](#git-tag)
    
+  1. Branches / Branching 
+     * [Branch Overview with origin image](#branch-overview-with-origin-image)
+   
   1. Advanced Commands 
      * [git reflog](#git-reflog)
      * [git reset - Back in Time](#git-reset---back-in-time)
@@ -50,11 +53,15 @@
   1. Help
      * [Help from commandline](#help-from-commandline)
    
-  1. subtrees
-     * [substrees](#substrees)
+  1. submodules
+     * [submodules](#submodules)
    
   1. Authentication 
      * [Work with different credentials](#work-with-different-credentials)
+     
+  1. Shells 
+     * [color for zsh-shell under osx](https://gist.github.com/chrisnolet/d3582cd63eb3d7b4fcb4d5975fd91d04)
+     * [branch mit anzeigen in zsh-shell und osx](https://github.com/romkatv/powerlevel10k)
    
   1. Documentation 
      * [GIT Pdf](http://schulung.t3isp.de/documents/pdfs/git/git-training.pdf)
@@ -67,7 +74,13 @@
      * https://www.innoq.com/de/talks/2019/05/commit-message-101/
      * https://github.com/GitAlias/gitalias/blob/main/gitalias.txt
      * https://education.github.com/git-cheat-sheet-education.pdf
+     * [.gitignore](https://git-scm.com/docs/gitignore)
+     * [learn branching](https://learngitbranching.js.org/?locale=de_DE)
      
+  1. Datenbank - Versionierung 
+     * [Methode 1](https://github.com/sergiosbx/pyway)
+     * [Methode 2](https://flywaydb.org/)
+
 ## Backlog  
 
   1. Installation 
@@ -305,6 +318,15 @@ git checkout master
 git pull --rebase --tags
 ```
 
+## Branches / Branching 
+
+### Branch Overview with origin image
+
+
+### master vs. origin/master vs origin master
+
+![Grafi](/images/origin-branches.drawio.svg)
+
 ## Advanced Commands 
 
 ### git reflog
@@ -433,12 +455,23 @@ git config branch.master.rebase true
 ### Arbeit mit submodules
 
 
-### Best practive 
+### Walkthrough 
 
 ```
-clone repo use for submodule seperately
-(in seperate folder)
-if you want to change it
+##
+## uses the same branch as main repo 
+git submodule add https://github.com/jmetzger/training-git-pycharm
+
+## tracking is done here:
+## cat .gitmodules 
+
+```
+
+### clone repo with submodules (done afaik automatically by pycharm) 
+
+```
+git clone --recurse-submodules --remote-submodules <repo-url>
+
 ```
 
 ### Updating commands for updating subfolder 
@@ -446,8 +479,25 @@ if you want to change it
 ```
 git submodule update --remote 
 ## use other branch from submodule then master 
-git config -f .gitmodules submodule.DbConnector.branch stable
+git config -f .gitmodules submodule.training-git-pycharm.branch stable
 ```
+
+### Task: Set submodule to a specific tag 
+
+```
+cd submodule_directory
+git checkout v1.0
+cd ..
+git add submodule_directory
+git commit -m "moved submodule to v1.0"
+git push
+```
+
+
+### pycharm notes 
+
+  * There is no action for "git submodule add" in IDE
+  * Once you do it from CLI, you can add it to PyCharm's Version Control here: `Version Control > Directory Mappings`
 
 ### Ref.
 
@@ -826,47 +876,58 @@ git help log
 
 ```
 
-## subtrees
+## submodules
 
-### substrees
-
-
-### Prerequisites - Existing local repo 
-
-```
-## in der bash 
-cd .. 
-cp -a training training-neu 
-cd training-neu
-```
+### submodules
 
 
-### Walkthrough
+### Walkthrough 
 
 ```
-git remote add -f training-git https://github.com/jmetzger/training-git.git
-## weird, but needed 
-git status 
-git subtree add --prefix training training-git main --squash
-```
+##
+## uses the same branch as main repo 
+git submodule add https://github.com/jmetzger/training-git-pycharm
 
-### Updating 
-
-```
-git fetch training-git main
-git subtree pull --prefix training training-git main --squash
-```
-
-### Push 
+## tracking is done here:
+## cat .gitmodules 
 
 ```
-git subtree push --prefix=training training-git main
+
+### clone repo with submodules (done afaik automatically by pycharm) 
+
+```
+git clone --recurse-submodules --remote-submodules <repo-url>
+
+```
+
+### Updating commands for updating subfolder 
+
+```
+git submodule update --remote 
+## use other branch from submodule then master 
+git config -f .gitmodules submodule.training-git-pycharm.branch stable
+```
+
+### Task: Set submodule to a specific tag 
+
+```
+cd submodule_directory
+git checkout v1.0
+cd ..
+git add submodule_directory
+git commit -m "moved submodule to v1.0"
+git push
 ```
 
 
-### Ref. 
+### pycharm notes 
 
-  * https://www.atlassian.com/git/tutorials/git-subtree
+  * There is no action for "git submodule add" in IDE
+  * Once you do it from CLI, you can add it to PyCharm's Version Control here: `Version Control > Directory Mappings`
+
+### Ref.
+
+  * https://git-scm.com/book/de/v2/Git-Tools-Submodule
 
 ## Authentication 
 
@@ -876,6 +937,16 @@ git subtree push --prefix=training training-git main
 ### Ref:
 
 https://de.linkedin.com/pulse/mehrere-gitlabgithub-accounts-bzw-ssh-keys-zum-host-mit-mindermann
+
+## Shells 
+
+### color for zsh-shell under osx
+
+  * https://gist.github.com/chrisnolet/d3582cd63eb3d7b4fcb4d5975fd91d04
+
+### branch mit anzeigen in zsh-shell und osx
+
+  * https://github.com/romkatv/powerlevel10k
 
 ## Documentation 
 
@@ -921,6 +992,24 @@ https://de.linkedin.com/pulse/mehrere-gitlabgithub-accounts-bzw-ssh-keys-zum-hos
 ### Specification Conventional Commits
 
   * https://www.conventionalcommits.org/en/v1.0.0/
+
+### .gitignore
+
+  * https://git-scm.com/docs/gitignore
+
+### learn branching
+
+  * https://learngitbranching.js.org/?locale=de_DE
+
+## Datenbank - Versionierung 
+
+### Methode 1
+
+  * https://github.com/sergiosbx/pyway
+
+### Methode 2
+
+  * https://flywaydb.org/
 
 ## Installation 
 
