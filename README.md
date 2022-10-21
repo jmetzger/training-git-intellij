@@ -75,6 +75,7 @@
      * https://github.com/GitAlias/gitalias/blob/main/gitalias.txt
      * https://education.github.com/git-cheat-sheet-education.pdf
      * [.gitignore](https://git-scm.com/docs/gitignore)
+     * [learn branching](https://learngitbranching.js.org/?locale=de_DE)
      
   1. Datenbank - Versionierung 
      * [Methode 1](https://github.com/sergiosbx/pyway)
