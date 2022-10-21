@@ -38,6 +38,11 @@ git push
 ```
 
 
+## pycharm notes 
+
+  * There is no action for "git submodule add" in IDE
+  * Once you do it from CLI, you can add it to PyCharm's Version Control here: `Version Control > Directory Mappings`
+
 ## Ref.
 
   * https://git-scm.com/book/de/v2/Git-Tools-Submodule
