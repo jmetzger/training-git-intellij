@@ -50,8 +50,8 @@
   1. Help
      * [Help from commandline](help.md)
    
-  1. subtrees
-     * [substrees](subtree.md)
+  1. submodules
+     * [submodules](submodules.md)
    
   1. Authentication 
      * [Work with different credentials](credential-helper.md)
