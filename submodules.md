@@ -3,6 +3,7 @@
 ## Walkthrough 
 
 ```
+#
 # uses the same branch as main repo 
 git submodule add https://github.com/jmetzger/training-git-pycharm
 
