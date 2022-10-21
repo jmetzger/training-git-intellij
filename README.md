@@ -76,6 +76,10 @@
      * https://education.github.com/git-cheat-sheet-education.pdf
      * [.gitignore](https://git-scm.com/docs/gitignore)
      
+  1. Datenbank - Versionierung 
+     * [Methode 1](https://github.com/sergiosbx/pyway)
+     * [Methode 2](https://flywaydb.org/)
+
 ## Backlog  
 
   1. Installation 
