@@ -41,7 +41,8 @@
      * [Alle Dateien, die sich geändert haben anzeigen z.B. heute](files-changed-today.md)
   
   1. Tipps & Tricks (editor) 
-     * [Notepad als Editor verwenden](notepad-git.md) 
+     * [Notepad als Editor verwenden- Windows](notepad-git.md)
+     * [TextEdit als Editor unter mac verwenden](textedit-git.md)
   
   1. Exercises 
      * [merge feature/4712 - conflict](merge-conflict.md)
