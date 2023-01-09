@@ -1,7 +1,7 @@
 # Notepad in git verwenden.
 
 ```
-git config --global config.editor notepad 
+git config --global core.editor notepad 
 
 
 ```
