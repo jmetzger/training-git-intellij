@@ -5,6 +5,9 @@
   1. Geschichte / Grundlagen 
      * [GIT Pdf](http://schulung.t3isp.de/documents/pdfs/git/git-training.pdf)
      
+  1. pycharm 
+     * [Disable ESC when using vi as editor](pycharm/disable-esc.md)
+     
   1. Commands (with tipps & tricks) 
      * [git add + Tipps & Tricks](add.md)
      * [git commit](commit.md)
