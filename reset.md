@@ -14,7 +14,7 @@
 git reset --hard 2343 
 ```
 
-### Example (Arbeitsumgebung auf den Stand des letzten Commits setzten)
+## Example (Arbeitsumgebung auf den Stand des letzten Commits setzten)
 
 ```
 # linux befehl -legt leere datei an. 
