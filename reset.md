@@ -13,3 +13,13 @@
 ```
 git reset --hard 2343 
 ```
+
+### Example (Arbeitsumgebung auf den Stand des letzten Commits setzten)
+
+```
+# linux befehl -legt leere datei an. 
+touch myfile
+git add myfile 
+# ich will dieses file nicht !!!!! 
+git reset --hard HEAD 
+```
