@@ -45,6 +45,9 @@
   1. Tipps & Tricks (editor) 
      * [Notepad als Editor verwenden- Windows](notepad-git.md)
      * [TextEdit als Editor unter mac verwenden](textedit-git.md)
+     
+  1. Tipps & Tricks (Aufräumen) 
+     * [Tracking Branches (shadow branches) nach Integration Online löschen](remote-branches-delete.md)
   
   1. Exercises 
      * [merge feature/4712 - conflict](merge-conflict.md)
