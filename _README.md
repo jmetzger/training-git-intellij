@@ -5,8 +5,11 @@
   1. Geschichte / Grundlagen 
      * [GIT Pdf](http://schulung.t3isp.de/documents/pdfs/git/git-training.pdf)
      
+  1. pycharm 
+     * [Disable ESC when using vi as editor](#disable-esc-when-using-vi-as-editor)
+     
   1. Commands (with tipps & tricks) 
-     * [git add + Tipps & Tricks](#git-add-+-tipps-&-tricks)
+     * [git add + Tipps & Tricks](#git-add-+-tipps--tricks)
      * [git commit](#git-commit)
      * [git log](#git-log)
      * [git config](#git-config)
@@ -16,6 +19,8 @@
      * [git checkout](#git-checkout)
      * [git merge](#git-merge)
      * [git tag](#git-tag)
+     * [git push/pull](#git-pushpull)
+     * [git reset](#git-reset)
    
   1. Branches / Branching 
      * [Branch Overview with origin image](#branch-overview-with-origin-image)
@@ -24,7 +29,7 @@
      * [git reflog](#git-reflog)
      * [git reset - Back in Time](#git-reset---back-in-time)
      
-  1. Tips & tricks 
+  1. Tipps & tricks 
      * [Beautified log](#beautified-log)
      * [Change already committed files and message](#change-already-committed-files-and-message)
      * [Best practice - Delete origin,tracking and local branch after pull request/merge request](#best-practice---delete-origintracking-and-local-branch-after-pull-requestmerge-request)
@@ -36,6 +41,13 @@
      * [SETUP.sql zu setup.sql in Windows (Groß- und Kleinschreibung)](#setupsql-zu-setupsql-in-windows-groß--und-kleinschreibung)
      * [Force specfic commit message](#force-specfic-commit-message)
      * [Alle Dateien, die sich geändert haben anzeigen z.B. heute](#alle-dateien-die-sich-geändert-haben-anzeigen-zb-heute)
+  
+  1. Tipps & Tricks (editor) 
+     * [Notepad als Editor verwenden- Windows](#notepad-als-editor-verwenden--windows)
+     * [TextEdit als Editor unter mac verwenden](#textedit-als-editor-unter-mac-verwenden)
+     
+  1. Tipps & Tricks (Aufräumen) 
+     * [Tracking Branches (shadow branches) nach Integration Online löschen](#tracking-branches-shadow-branches-nach-integration-online-löschen)
   
   1. Exercises 
      * [merge feature/4712 - conflict](#merge-feature4712---conflict)
@@ -95,6 +107,13 @@
 ### GIT Pdf
 
   * http://schulung.t3isp.de/documents/pdfs/git/git-training.pdf
+
+## pycharm 
+
+### Disable ESC when using vi as editor
+
+
+  * https://intellij-support.jetbrains.com/hc/en-us/community/posts/360003508579-How-to-stop-Escape-from-Leaving-Terminal
 
 ## Commands (with tipps & tricks) 
 
@@ -188,6 +207,7 @@ git config --unset --global alias.log
 ### Show information about an object e.g. commit 
 
 ```
+## Show commit info and what has changed 
 git show <commit-ish>
 ## example with commit-id 
 git show 342a
@@ -318,6 +338,59 @@ git checkout master
 git pull --rebase --tags
 ```
 
+### git push/pull
+
+
+### Neuen Branch pushen 
+
+```
+git push -u origin neuer-branch 
+```
+
+### Unseren lokalen master auf dem Stand mit online master halten
+
+```
+git pull --rebase origin master 
+```
+
+### Wir arbeiten an einem branch und wollen diesen täglich mit dem master aktualiseren
+
+```
+## Initial beim ersten mal damit arbeiten 
+git checkout master 
+git checkout -b feature/neuer-branch
+
+## danach täglich im feature/neuer-branch 
+git pull --rebase origin master
+```
+
+### git reset
+
+
+
+### Why ? 
+
+  * Back in time -> reset
+  * e.g. git reset –-hard e2d5  
+  * attention: only use it, when changes are not published (remotely) yet.
+  * → It is your command, IN CASE your are telling yourself, omg, what's that, what did i do here, let me undo that
+
+### Example 
+
+```
+git reset --hard 2343 
+```
+
+### Example (Arbeitsumgebung auf den Stand des letzten Commits setzten)
+
+```
+## linux befehl -legt leere datei an. 
+touch myfile
+git add myfile 
+## ich will dieses file nicht !!!!! 
+git reset --hard HEAD 
+```
+
 ## Branches / Branching 
 
 ### Branch Overview with origin image
@@ -366,7 +439,17 @@ git reflog
 git reset --hard 2343 
 ```
 
-## Tips & tricks 
+### Example (Arbeitsumgebung auf den Stand des letzten Commits setzten)
+
+```
+## linux befehl -legt leere datei an. 
+touch myfile
+git add myfile 
+## ich will dieses file nicht !!!!! 
+git reset --hard HEAD 
+```
+
+## Tipps & tricks 
 
 ### Beautified log
 
@@ -642,6 +725,42 @@ for i in $(git log --after="2022-09-26" --before="2022-09-27" --pretty=format:""
 git log --after="2022-09-26" --before="2022-09-27" --pretty=format:"" --follow -p -- todo.txt
 ```
 
+## Tipps & Tricks (editor) 
+
+### Notepad als Editor verwenden- Windows
+
+
+```
+git config --global core.editor notepad 
+
+
+```
+
+### TextEdit als Editor unter mac verwenden
+
+
+```
+git config --global core.editor "open -W -n"
+```
+
+## Tipps & Tricks (Aufräumen) 
+
+### Tracking Branches (shadow branches) nach Integration Online löschen
+
+
+```
+git checkout master 
+git pull --rebase origin master 
+
+## Davor: Online branch (neuer feature-branch löschen) 
+## Löscht Schattenbranch 
+git fetch --prune 
+
+## Und lokaler branch löschen 
+git branch -d feature/mein-feature-branch 
+
+```
+
 ## Exercises 
 
 ### merge feature/4712 - conflict
@@ -652,10 +771,10 @@ git log --after="2022-09-26" --before="2022-09-27" --pretty=format:"" --follow -
 ```
 1. You are in master-branch
 2. Checkout new branch feature/4712 
-3. Change line1 in todo.txt 
+3. Change line1 in README.md
 4. git add -A; git commit -am "feature-4712 done"
 5. Change to master 
-6. Change line1 in todo.txt 
+6. Change line1 in README.md
 7. git add -A; git commit -am "change line1 in todo.txt in master" 
 8. git merge feature/4712 
 ```
