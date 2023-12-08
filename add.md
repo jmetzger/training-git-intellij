@@ -9,5 +9,6 @@ git add .
 
 ## Fix -A 
 # adds everything no matter in which folder you are in your project 
-git add -A 
+git add -A
+
 ```
