@@ -25,4 +25,8 @@ oder auf commit-local changes klicken
 
 ![image](https://github.com/jmetzger/training-git-intellij/assets/1933318/4eeb9bcf-e435-4b9b-bfe7-397292a7828f)
 
+## Wichtig: Bestimmte Files sollten ignoriert werden.
 
+  * https://intellij-support.jetbrains.com/hc/en-us/articles/206544839-How-to-manage-projects-under-Version-Control-Systems
+  * Das passiert in neueren Version bereits automatisch. (seit 2019.1)
+  
