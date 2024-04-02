@@ -5,7 +5,8 @@
   1. Geschichte / Grundlagen 
      * [GIT Pdf](http://schulung.t3isp.de/documents/pdfs/git/git-training.pdf)
      
-  1. pycharm 
+  1. Intellij
+     * [Neues Projekt erstellen - ohne git](intellij/new-project-without-git.md) 
      * [Disable ESC when using vi as editor](pycharm/disable-esc.md)
      
   1. Commands (with tipps & tricks) 
