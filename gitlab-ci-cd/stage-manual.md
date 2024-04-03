@@ -2,7 +2,7 @@
 
 ## So geht's ;o) 
 
-```
+```yaml
 stages:          # List of stages for jobs, and their order of execution
   - build
   - test
