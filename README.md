@@ -1,4 +1,4 @@
-# GIT-Training 
+# GIT-Training (mit Intellij) 
 
 ## Agenda 
 
@@ -95,6 +95,9 @@
   1. Datenbank - Versionierung 
      * [Methode 1](https://github.com/sergiosbx/pyway)
      * [Methode 2](https://flywaydb.org/)
+    
+  1. Extra / Gitlab CI/CD
+     * [Kann ich einen stage manuell starten](gitlab-ci-cd/stage-manual.md)
 
 ## Backlog  
 
