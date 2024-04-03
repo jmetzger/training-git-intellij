@@ -8,6 +8,7 @@
   1. Intellij
      * [Neues Projekt erstellen - ohne git](intellij/new-project-without-git.md)
      * [Bestehendes Projekt unter GIT Versionsverwaltung stellen](intellij/project-gitify.md)
+     * [Git Untermenü in obererer Menüleiste einrichten](intellij/add-git-submenu.md) 
      * [Disable ESC when using vi as editor](pycharm/disable-esc.md)
      
   1. Commands (with tipps & tricks) 
