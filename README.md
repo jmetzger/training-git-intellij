@@ -25,9 +25,10 @@
      * [git push/pull](push-pull.md)
      * [git reset](reset.md)
    
-  1. Branches / Branching 
+  1. Branches / Branching /workflows 
+     * [GIT Workflows](git-workflows.md)
      * [Branch Overview with origin image](branches/overview.md)
-   
+     
   1. Advanced Commands 
      * [git reflog](reflog.md) 
      * [git reset - Back in Time](reset.md)   
