@@ -1,4 +1,4 @@
-# Add als Untermenü in der oberen Menüleiste einfügen
+# git als Untermenü in der oberen Menüleiste einfügen
 
 ## Rechte Maustaste 
 
