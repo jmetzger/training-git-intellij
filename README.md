@@ -24,6 +24,7 @@
      * [git tag](tag.md)
      * [git push/pull](push-pull.md)
      * [git reset](reset.md)
+     * [git rm (Dateien löschen aus git)](rm.md)
    
   1. Branches / Branching /workflows 
      * [GIT Workflows](git-workflows.md)
