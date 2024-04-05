@@ -10,6 +10,9 @@
      * [Bestehendes Projekt unter GIT Versionsverwaltung stellen](intellij/project-gitify.md)
      * [Git Untermenü in obererer Menüleiste einrichten](intellij/add-git-submenu.md) 
      * [Disable ESC when using vi as editor](pycharm/disable-esc.md)
+
+  1. Intellij - Tools
+     * [Easygitlab - Erweiterung für merge request und pipeline management](https://plugins.jetbrains.com/plugin/19611-easy-gitlab)
      
   1. Commands (with tipps & tricks) 
      * [git add + Tipps & Tricks](add.md)
