@@ -13,6 +13,9 @@
 
   1. Intellij - Tools
      * [Easygitlab - Erweiterung für merge request und pipeline management](https://plugins.jetbrains.com/plugin/19611-easy-gitlab)
+
+  1. Intellij - Tipps & Tricks
+     * [Nicht automatisch mergen - d.h. kein merge-commit](intellij/no-automatic-merge-commit.md)
      
   1. Commands (with tipps & tricks) 
      * [git add + Tipps & Tricks](add.md)
