@@ -19,6 +19,9 @@
 
   1. Intellij - Übungen
      * [Übungen](uebungen.md)
+
+  1. JIRA/Gitlab - Integration
+     * [Jira-Integration](gitlab/jira-integration.md)
      
   1. Commands (with tipps & tricks) 
      * [git add + Tipps & Tricks](add.md)
