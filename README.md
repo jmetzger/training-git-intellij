@@ -16,6 +16,9 @@
 
   1. Intellij - Tipps & Tricks
      * [Nicht automatisch mergen - d.h. kein merge-commit](intellij/no-automatic-merge-commit.md)
+
+  1. Intellij - Übungen
+     * [Übungen](uebungen.md)
      
   1. Commands (with tipps & tricks) 
      * [git add + Tipps & Tricks](add.md)
