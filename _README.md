@@ -1,12 +1,27 @@
-# GIT-Training 
+# GIT-Training (mit Intellij) 
 
 
 ## Agenda
   1. Geschichte / Grundlagen 
      * [GIT Pdf](http://schulung.t3isp.de/documents/pdfs/git/git-training.pdf)
      
-  1. pycharm 
+  1. Intellij
+     * [Neues Projekt erstellen - ohne git](#neues-projekt-erstellen---ohne-git)
+     * [Bestehendes Projekt unter GIT Versionsverwaltung stellen](#bestehendes-projekt-unter-git-versionsverwaltung-stellen)
+     * [Git Untermenü in obererer Menüleiste einrichten](#git-untermenü-in-obererer-menüleiste-einrichten)
      * [Disable ESC when using vi as editor](#disable-esc-when-using-vi-as-editor)
+
+  1. Intellij - Tools
+     * [Easygitlab - Erweiterung für merge request und pipeline management](https://plugins.jetbrains.com/plugin/19611-easy-gitlab)
+
+  1. Intellij - Tipps & Tricks
+     * [Nicht automatisch mergen - d.h. kein merge-commit](#nicht-automatisch-mergen---dh-kein-merge-commit)
+
+  1. Intellij - Übungen
+     * [Übungen](#übungen)
+
+  1. JIRA/Gitlab - Integration
+     * [Jira-Integration](#jira-integration)
      
   1. Commands (with tipps & tricks) 
      * [git add + Tipps & Tricks](#git-add-+-tipps--tricks)
@@ -21,10 +36,12 @@
      * [git tag](#git-tag)
      * [git push/pull](#git-pushpull)
      * [git reset](#git-reset)
+     * [git rm (Dateien löschen aus git)](#git-rm-dateien-löschen-aus-git)
    
-  1. Branches / Branching 
+  1. Branches / Branching /workflows 
+     * [GIT Workflows](#git-workflows)
      * [Branch Overview with origin image](#branch-overview-with-origin-image)
-   
+     
   1. Advanced Commands 
      * [git reflog](#git-reflog)
      * [git reset - Back in Time](#git-reset---back-in-time)
@@ -92,6 +109,9 @@
   1. Datenbank - Versionierung 
      * [Methode 1](https://github.com/sergiosbx/pyway)
      * [Methode 2](https://flywaydb.org/)
+    
+  1. Extra / Gitlab CI/CD
+     * [Kann ich einen stage manuell starten](#kann-ich-einen-stage-manuell-starten)
 
 ## Backlog  
 
@@ -108,12 +128,367 @@
 
   * http://schulung.t3isp.de/documents/pdfs/git/git-training.pdf
 
-## pycharm 
+## Intellij
+
+### Neues Projekt erstellen - ohne git
+
+
+ 1. Projektname "training"
+ 2. Alles andere lassen
+ 3. SDK -> runterladen und auswählen (JDK) 
+ 4. Create 
+
+![image](https://github.com/jmetzger/training-git-intellij/assets/1933318/265d362e-fb57-45aa-8e1d-03332dfc7632)
+
+
+### Bestehendes Projekt unter GIT Versionsverwaltung stellen
+
+
+### Schritt 1: Oben links neben Projekt -> Version Control (Seletor anklicken) 
+
+![image](https://github.com/jmetzger/training-git-intellij/assets/1933318/d14663b9-7bc0-4c1e-a120-fad908b859d6)
+
+### Schritt 2: Namen des Projektes übernehmen 
+
+![image](https://github.com/jmetzger/training-git-intellij/assets/1933318/e77d0deb-51de-450f-8256-a64ac18be2ea)
+
+### Schritt 3: Versionsverwaltung steht jetzt unten links zur Verfügung (Seitenmenü) 
+
+![image](https://github.com/jmetzger/training-git-intellij/assets/1933318/89f90b5d-bb8a-411a-92aa-19f738add8cb)
+
+### Schritt 4: Anklicken ;o) 
+
+### Schritt 5: Falls oben im linken Menü -o- noch nicht sichtbar 
+
+![image](https://github.com/jmetzger/training-git-intellij/assets/1933318/a29c320e-f572-4d7a-ae2b-e997a98eb4f2)
+
+Dann: 
+
+Entweder STRG + k - Tastaturkombinationen verwenden
+oder auf commit-local changes klicken 
+
+![image](https://github.com/jmetzger/training-git-intellij/assets/1933318/4eeb9bcf-e435-4b9b-bfe7-397292a7828f)
+
+### Wichtig: Bestimmte Files sollten ignoriert werden.
+
+  * https://intellij-support.jetbrains.com/hc/en-us/articles/206544839-How-to-manage-projects-under-Version-Control-Systems
+  * Das passiert in neueren Version bereits automatisch. (seit 2019.1)
+  
+
+### Git Untermenü in obererer Menüleiste einrichten
+
+
+### Rechte Maustaste 
+
+![image](https://github.com/jmetzger/training-git-intellij/assets/1933318/8441978e-4793-42bd-9d72-56a715ef253e)
+
+### Neue Action hinzufügen 
+
+![image](https://github.com/jmetzger/training-git-intellij/assets/1933318/29c873bd-0b6d-40f8-8335-faa71468042e)
+
+### Git anhaken 
+
+  * 3. Punkt -> Version Control System -> git 
+
+![image](https://github.com/jmetzger/training-git-intellij/assets/1933318/499abca8-979d-4382-8fdb-5226fa83db9a)
+
+  * Dann unten rechts OK
+  * -> Danach im nächsten Fenster nochmal o.k. 
+
+![image](https://github.com/jmetzger/training-git-intellij/assets/1933318/a21d03d9-7c98-4b1d-a3f0-663df67d7f16)
+
+### Git Symbol erscheint 
+
+![image](https://github.com/jmetzger/training-git-intellij/assets/1933318/9c456056-b0da-402b-9911-4f37e56934d2)
 
 ### Disable ESC when using vi as editor
 
 
   * https://intellij-support.jetbrains.com/hc/en-us/community/posts/360003508579-How-to-stop-Escape-from-Leaving-Terminal
+
+## Intellij - Tools
+
+### Easygitlab - Erweiterung für merge request und pipeline management
+
+  * https://plugins.jetbrains.com/plugin/19611-easy-gitlab
+
+## Intellij - Tipps & Tricks
+
+### Nicht automatisch mergen - d.h. kein merge-commit
+
+
+### Why ? 
+
+  * If you want to review the files before commit - message is done
+
+### Where ? 
+
+  * When you want to merge -> in top menu -> GIT -> Merge...
+  * Then ->
+![image](https://github.com/jmetzger/training-git-intellij/assets/1933318/6aabc4e7-a4e2-44e6-b745-307c192cf158)
+
+### On the commandline 
+
+```
+git merge --no-commit <your-branch-to-be-merged>
+```
+
+## Intellij - Übungen
+
+### Übungen
+
+
+```
+### Übung 11 
+
+1. Trainer legt Gruppenprojekt an und pushed code
+2. Gruppenprojekt clonen 
+3. Zugriff über gitlab testen:
+https://gitlab.com/training.tn1/bbgruppe1/
+4. feature-branch erstellen
+
+feature/jochen1 
+
+5.  eine neue datei anlegen + adden +committen 
+
+6. feature  - branch pushen 
+
+7. merge-request 
+
+
+--- nacheinander 
+8. mergen
+
+--- aufräumen 
+9. wechseln in den master 
+10. master pull (löscht er den schattenbranch)  
+11. feature - branch 
+
+
+### Übung 10
+
+1. lokal: neuen Branch feature/4840
+2. Ändern README.md Zeile 1 + add + commit 
+3. Ändern datei2.txt + add + commit 
+
+4. Online in master: neuen ánhänge readme
+committen 
+
+5. Online in master: Zeile 1  readme
+committen 
+
+6. Änderungen von Online mit pull --rebase abholen 
+
+---
+
+7. dann feature pushen 
+
+8. merge request 
+
+9. Aufräumen 
+a. in master wechseln 
+b. git pull master
+c. feature-branch löschen 
+
+
+
+
+### Übung 9c 
+
+1. feature/4836 pushen 
+2. merge requests
+3. mergen 
+
+3.5 Anschauen im graphen online 
+
+4. aufräumen 
+a. in den master wechseln
+b. pull --prune
+c. feature löschen 
+
+### Übung 9b
+
+1. lokal: neuen Branch feature/4836 
+2. Ändern datei1.txt + add + commit 
+3. Ändern datei2.txt + add + commit 
+
+4. Online in master: neuen ánhänge readme
+committen 
+
+5. Online in master: neuen ánhänge readme
+committen 
+
+6. Änderungen von Online mit pull --rebase abholen 
+
+---
+
+7. dann feature pushen 
+
+8. merge request 
+
+9. Aufräumen 
+a. in master wechseln 
+b. git pull master
+c. feature-branch löschen 
+
+
+### Übung 9a
+
+1. lokal: neuen Branch feature/4835 
+2. Neue datei1.txt + add + commit 
+3. neue datei2.txt + add + commit 
+
+4. Online in master: neuen ánhänge readme
+committen 
+
+5. Online in master: neuen ánhänge readme
+committen 
+
+6. Änderungen von Online mit pull (merge) abholen 
+
+7. dann feature pushen 
+
+8. merge request 
+
+9. Aufräumen 
+a. in master wechseln 
+b. git pull master
+c. feature-branch löschen 
+
+
+### Übung 8: neues feature mit merge-request (mit Konflikt) 
+
+1. Online in master -> README.md Zeile 1 ändern 
+--
+
+2. Lokal: Neuen branchen feature/4832 
+3. Ändern Datei README.md Zeile 1 ändern + add + commit 
+4. git push -u origin feature/4832 
+
+5. Online: Merge Request  erstellen 
+
+-> Conflict 
+
+5.5. Konflikt lösen 
+a. Die Änderung lokal abholen (vom master)
+b. Conflict lösen
+c. Mergen lokal 
+d. noch pushen 
+
+
+5.6. und mergen 
+
+
+6. Aufräumen
+6.1. master wechseln udn auf 'n Stand bringe 
+6.2. pull --prune // schattenbranch löschen (Remote Tracking Branch)
+6.3.  lokalen feature-Branch löschen 
+
+
+
+
+
+### Übung 7: neues feature mit merge-request (ohne Konflikt) 
+
+1. Lokal: Neuen branchen feature/4831 
+2. Lokal neue Datei f1.txt erstellen + add + commit 
+3. Lokal neue Datei f2.txt erstellen + add + commit 
+4. git push -u origin feature/4831 
+
+5. Online: Merge Request  erstellen 
+5.5. und mergen 
+
+
+6. Aufräumen
+6.1. master wechseln 
+6.2. pull --prune // schattenbranch löschen (Remote Tracking Branch)
+6.3.  lokalen feature-Branch löschen 
+c. master auf Stand bringe 
+
+
+
+### Übung 6:(Online und lokale Änderung) 
+
+1. Online: README ändern -> Zeile 1 
+2. Lokal Datei README -> Zeile 1 
++ add + commit
+3. Push 
+4. Konflikte  lösen
+5. Nochmal pushen 
+
+
+### Übung 5:(Online und lokale Änderung) 
+
+1. Online: README ändern
+2. Lokal neue Datei AGENDA.md mit einer Zeile 
++ add + commit
+3. Push 
+
+
+
+
+### Übung 4: (Onloneänderung ohne Konflikt) 
+    
+    1. Online: Ändern der README 
+    2. Lokal: Änderung abholen 
+    
+    
+
+
+
+### Übung 3: Übung reset 
+
+1. Auf alten Stand zurück in intellij über log
+2. auf kommandozeile gehen und mit reflog letztes commit 
+vor reset ausfindig machen
+3. git reset --hard <zu-id-aus-2>
+4. Überprüfung des Logs in Intellij 
+
+
+### Übung 2: Konflikt mit mergetool 
+
+1. You are in master-branch
+2. Checkout new branch feature/4722
+3. Change line1 in README.md
+4. git add -A; git commit -am "done"
+5. Change to master 
+6. Change line1 in README.md
+
+7. git add -A; git commit -am "change line1 in README in master" 
+
+8. git merge feature/4722
+
+
+### Übung 1: Konflikt 
+
+1. You are in master-branch
+2. Checkout new branch feature/4721 
+3. Change line1 in README.md
+4. git add -A; git commit -am "feature-4721 done"
+5. Change to master 
+6. Change line1 in README.md
+
+
+7. git add -A; git commit -am "change line1 in todo.txt in master" 
+
+7.5. Tiefsinnige Betrachtung -> Log 
+
+
+8. git merge feature/4721
+
+```
+
+## JIRA/Gitlab - Integration
+
+### Jira-Integration
+
+
+### Reference 
+
+ * https://docs.gitlab.com/ee/integration/jira/development_panel.html
+ * Jira -> DataCenter 
+   * https://docs.gitlab.com/ee/integration/jira/development_panel.html#use-the-integration
+ * https://about.gitlab.com/blog/2021/05/24/gitlab-and-jira-integration-the-final-steps/
 
 ## Commands (with tipps & tricks) 
 
@@ -129,7 +504,8 @@ git add .
 
 ### Fix -A 
 ## adds everything no matter in which folder you are in your project 
-git add -A 
+git add -A
+
 ```
 
 ### git commit
@@ -198,6 +574,28 @@ git config --global alias.sl '!git log --oneline -2 && git status'
 git config --global --list 
 
 git config --unset --global alias.log
+```
+
+### Die verschiedenen Ebenen 
+
+```
+## user global gesetzt
+git config --global user.name "Jochen Blaumann Metzger"
+##nur im Repo gesetzt
+git config user.name "J. Blaumann"
+## Zeig mal was auf Systemebene gesetzt ist (oberste Ebene)
+git config --list --system
+## Zeige mal, was auf User-Ebene gesetzt ist (2. Ebene)
+git config --list --global
+## Zeig mal was auf Repo-Ebene gesetzt ist 
+git config --list --local
+##ä Und was ist das ergebnis ? -> per Vererbung, was nimmst du am Ende
+git config --list
+
+## Weclhe email wird jetzt im Repo verwendet 
+git config user.email
+## Welcher Name wird jetzt im Repo verwendet ?
+git config user.name
 ```
 
 
@@ -391,7 +789,39 @@ git add myfile
 git reset --hard HEAD 
 ```
 
-## Branches / Branching 
+### git rm (Dateien löschen aus git)
+
+
+### Datei komplett löschen (Workspace, Index und Repo) 
+
+```
+git rm  dateiname  
+```
+
+### Datei nur aus Repo und Index löschen 
+
+```
+git rm --cached dateiname 
+```
+
+## Branches / Branching /workflows 
+
+### GIT Workflows
+
+
+### Centralized Workflow 
+
+![image](https://github.com/jmetzger/training-git-intellij/assets/1933318/7fd1d0dc-1af7-4280-8e61-5201dfb9caaf)
+
+
+### Feature Workflow 
+
+![image](https://github.com/jmetzger/training-git-intellij/assets/1933318/6858a34c-e765-4e72-bb1d-b2eee7255119)
+
+### gitflow workflow 
+
+![image](https://github.com/jmetzger/training-git-intellij/assets/1933318/7a7b7a97-fa58-4f25-92c8-8a4d8a52bb84)
+
 
 ### Branch Overview with origin image
 
@@ -843,7 +1273,7 @@ git pull --rebase
 git push
 Password for 'https://erding2017@bitbucket.org':
 To https://bitbucket.org/erding2017/git-remote-jochen.git
- ! [rejected](fetch first)
+ ! [rejected]        master -> master (fetch first)
 error: failed to push some refs to 'https://erding2017@bitbucket.org/erding2017/git-remote-jochen.git'
 hint: Updates were rejected because the remote contains work that you do
 hint: not have locally. This is usually caused by another repository pushing
@@ -869,7 +1299,7 @@ git push
 git push
 Password for 'https://erding2017@bitbucket.org':
 To https://bitbucket.org/erding2017/git-remote-jochen.git
- ! [rejected](fetch first)
+ ! [rejected]        master -> master (fetch first)
 ....
 ## Step 2: Integrate changes from online 
 git pull
@@ -1129,6 +1559,70 @@ https://de.linkedin.com/pulse/mehrere-gitlabgithub-accounts-bzw-ssh-keys-zum-hos
 ### Methode 2
 
   * https://flywaydb.org/
+
+## Extra / Gitlab CI/CD
+
+### Kann ich einen stage manuell starten
+
+
+### So geht's ;o) 
+
+```yaml
+stages:          # List of stages for jobs, and their order of execution
+  - build
+  - test
+
+build-job:       # This job runs in the build stage, which runs first.
+  stage: build
+  script:
+    - echo "Compiling the code..."
+    - echo "Compile complete."
+
+unit-test-job:   # This job runs in the test stage.
+  stage: test    # It only starts when the job in the build stage completes successfully.
+  script:
+    - echo "Running unit tests... This will take about 60 seconds."
+    - sleep 60
+    - echo "Code coverage is 90%"
+  when: manual 
+
+```
+
+### Beispiel: Deploy läuft erst, wenn Testing erfolgreich durchgeführt wurde 
+
+  * d.h. händisch gestartet und erfolgreich ausgeführt wurde.
+  * Keyword ist hier: allow_failure: false
+
+```
+stages:          # List of stages for jobs, and their order of execution
+  - build
+  - test
+  - deploy
+
+build-job:       # This job runs in the build stage, which runs first.
+  stage: build
+  script:
+    - echo "Compiling the code..."
+    - echo "Compile complete."
+
+unit-test-job:   # This job runs in the test stage.
+  stage: test    # It only starts when the job in the build stage completes successfully.
+  script:
+    - echo "Running unit tests... This will take about 60 seconds."
+    - sleep 10
+    - echo "Code coverage is 90%"
+  allow_failure: false
+  when: manual 
+
+deploy-job:   # This job runs in the test stage.
+  stage: deploy    # It only starts when the job in the build stage completes successfully.
+  script:
+    - echo "Now deploying "
+    - echo "Deployment done "
+
+```
+
+
 
 ## Installation 
 
