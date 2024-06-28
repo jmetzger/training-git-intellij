@@ -112,6 +112,9 @@
     
   1. Extra / Gitlab CI/CD
      * [Kann ich einen stage manuell starten](gitlab-ci-cd/stage-manual.md)
+    
+  1. Docmentation
+     [Sign commit with gpg](https://docs.gitlab.com/ee/user/project/repository/signed_commits/gpg.html)
 
 ## Backlog  
 
